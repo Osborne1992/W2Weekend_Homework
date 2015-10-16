@@ -10,7 +10,16 @@ class Hotel
   end
 
   def check_in(hotel_name, name_in)
-    add_hotel_check_in(hotel_name, name_in)
+    if name_in.size == 1
+      puts
+      puts "
+*** #{name_in.join} has been checked into the #{@name[hotel_name]}.
+*** We look forward to your stay."
+    else
+      puts "
+*** #{name_in.join(" and ")} have been checked into the #{@name[hotel_name]}.
+*** We look forward to your stay."
+  end
   end
 
   def pretty_string
