@@ -2,7 +2,7 @@ def show_revenue(chain)
 end
 
 def list_residents(chain)
-  puts chain.list_residents
+  chain.list_residents
 end
 
 def checking_out(chain)
