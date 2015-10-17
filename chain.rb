@@ -6,7 +6,7 @@ class Chain
     @name = options[:name]
     #@hotels = options[:hotels]
     @hotels = {}
-    @residents = options[:residents]
+    # @residents = options[:residents]
     @revenue = {}
   end
 
@@ -14,8 +14,8 @@ class Chain
   end
 
   def list_residents
-    @hotels.keys.each do |hotel|
-      puts "The #{hotel} currently has #{@residents.size} of their total rooms filled."
+    @hotels.keys.each do |hotel_name, hotel|
+      puts "The #{hotel_name} currently has #{hotel.residents.size} of their total rooms filled."
     end
   end
 
