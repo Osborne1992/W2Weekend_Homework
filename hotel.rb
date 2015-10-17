@@ -10,7 +10,6 @@ class Hotel
   end
 
   def check_in(hotel_name, name_in)
-
     name_in.each do |hotel_name, name|
       @residents[hotel_name] = name
     end
@@ -28,19 +27,7 @@ class Hotel
   end
 
   def pretty_string
-    if residents.size == 1
-    "Hotel: #{name} - Location: #{location}
-Currently has #{residents.size} resident in their #{rooms} total rooms.
-"  
-    elsif residents.size == rooms
-      "Hotel: #{name} - Location: #{location}
-Currently has all #{rooms} occupied. We apologise for this inconvenience.
-"
-    else
-      "Hotel: #{name} - Location: #{location}
-Currently has #{residents.size} residents in their #{rooms} total rooms.
-"
-    end
+    puts "Hotel: #{name} - Location: #{location} - #{residents.size}/#{rooms} residents"
   end
 
 end
