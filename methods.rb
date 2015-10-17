@@ -22,14 +22,21 @@ def checking_in(chain)
   puts "Please enter the hotel you wish to check in to"
   print "--> "
   hotel_name = gets.chomp
+  # if hotel_name != chain.hotels[name]
+  #   puts "The hotel name you entered was invalid."
+  #   puts "Press enter to try again"
+  #   gets
+  #   checking_in(chain)
+  # else
+  # end
   puts
   puts "Enter up to two names of those checking in, seperated with a comma and space. Example: Jack, Jill"
   print "--> "
-  check = gets.chomp.split(", ")
-  name_in = check
+  check = gets.chomp
+  name_in = check.split(", ")
   puts
   puts "Please confirm (y)es/(n)o/(q)uit,"
-  puts "#{check.join(", ")} - checking in to - #{hotel_name}"
+  puts "#{check} - checking in to - #{hotel_name}"
   print "--> "
   response = gets.chomp
 

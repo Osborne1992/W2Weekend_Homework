@@ -11,7 +11,9 @@ class Hotel
 
   def check_in(hotel_name, name_in)
 
-    residents[hotel_name] = name_in.select { |l| l.include? 'name_in'}.collect { |l| l.split.last }
+    name_in.each do |hotel_name, name|
+      @residents[hotel_name] = name
+    end
 
     if name_in.size == 1
       puts
