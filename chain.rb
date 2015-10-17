@@ -16,6 +16,16 @@ class Chain
   def list_residents
     @hotels.each do |hotel_name, hotel|
       puts "The #{hotel_name} currently has #{hotel.residents.size} of their total #{hotel.rooms} rooms filled."
+        if hotel.residents.size == 0
+          puts "This hotel currently has no residents."
+          puts
+        elsif hotel.residents.size == 2
+          puts "Residents include: #{hotel.residents.keys.join(" and ")}"
+          puts
+        else
+          puts "Residents include: #{hotel.residents.keys.join(", ")}"
+          puts
+        end
     end
   end
 
@@ -24,7 +34,7 @@ class Chain
   end
 
   def list_hotels
-      hotels.map { |key, hotel| hotel.pretty_string }.join("\n")
+      puts hotels.map { |key, hotel| hotel.pretty_string }.join
   end
 
 end

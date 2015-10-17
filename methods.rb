@@ -7,10 +7,15 @@ end
 
 def checking_out(chain)
   puts "To begin checking out, please enter your name. If checking out more than one, enter the second name seperated with a comma and space. Example: Jack, Jill"
-  name = check = gets.chomp.split(", ")
+  check = gets.chomp
+  name = check.split(", ")
   puts
   puts "Thank you. Give us a moment to look up your details..."
   sleep 2
+  name.each do |name|
+    hotel.residents(name)
+    puts hotel.residents(key)
+  end
   # Check each hotel for the name(s) being checked out
   # If duplicates in different hotels, confirm which hotel using a list
   # If duplicates in same hotel... crap
@@ -45,7 +50,7 @@ def checking_in(chain)
 end
 
 def list_hotels(chain)
-  puts chain.list_hotels
+  chain.list_hotels
 end
 
 def menu
