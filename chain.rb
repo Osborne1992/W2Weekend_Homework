@@ -15,7 +15,7 @@ class Chain
 
   def list_residents
     @hotels.each do |hotel_name, hotel|
-      puts "The #{hotel_name} currently has #{hotel.residents.size} of their total rooms filled."
+      puts "The #{hotel_name} currently has #{hotel.residents.size} of their total #{hotel.rooms} rooms filled."
     end
   end
 
