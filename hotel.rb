@@ -11,7 +11,7 @@ class Hotel
 
   def check_in(hotel_name, name_in)
 
-    residents[hotel_name] = name_in
+    residents[hotel_name] = name_in.select { |l| l.include? 'name_in'}.collect { |l| l.split.last }
 
     if name_in.size == 1
       puts
