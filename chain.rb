@@ -6,7 +6,7 @@ class Chain
     @name = options[:name]
     #@hotels = options[:hotels]
     @hotels = {}
-    @residents = {}
+    @residents = options[:residents]
     @revenue = {}
   end
 
@@ -14,10 +14,8 @@ class Chain
   end
 
   def list_residents
-    if residents.empty?
-      "We are a start up hotel chain... How we have so many hotels already, is not important. But as of now, we gots nothing."
-    else
-      residents.map { |key, resident|  }.join("\n")
+    @hotels.keys.each do |hotel|
+      puts "The #{hotel} currently has #{@residents.size} of their total rooms filled."
     end
   end
 
@@ -26,11 +24,23 @@ class Chain
   end
 
   def list_hotels
-    if hotels.empty?
-      "We are a start up hotel chain... How we have so many hotels already, is not important. But as of now, we gots nothing."
-    else
       hotels.map { |key, hotel| hotel.pretty_string }.join("\n")
-    end
   end
 
 end
+
+
+# def list_residents
+#   # if residents.empty?
+#   #   "We are a start up hotel chain... How we have so many hotels already, is not important. But as of now, we gots nothing."
+#   # else
+#   #   @hotels[hotel.name].each do |hotel|
+#   #     hotel.value? if false
+#   #     puts "The #{hotel} currently has no residents."
+#   #   else
+#   #     puts "The #{hotel} currently has the following residents."
+#   #     puts @residents[hotel].join(", ")
+#   #   end
+#   #   end
+#   # end
+# end
