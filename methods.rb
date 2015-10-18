@@ -6,7 +6,7 @@ def list_residents(chain)
 end
 
 def checking_out(chain)
-  hotel = chain.hotels
+  hotel = chain.all_residents
   puts "To begin checking out, please enter your name. If checking out more than one, enter the second name seperated with a comma and space. Example: Jack, Jill"
   check = gets.chomp
   name_out = check.split(", ")
