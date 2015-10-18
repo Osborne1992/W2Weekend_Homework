@@ -6,16 +6,26 @@ def list_residents(chain)
 end
 
 def checking_out(chain)
+  hotel = chain.hotels
   puts "To begin checking out, please enter your name. If checking out more than one, enter the second name seperated with a comma and space. Example: Jack, Jill"
   check = gets.chomp
-  name = check.split(", ")
+  name_out = check.split(", ")
   puts
-  puts "Thank you. Give us a moment to look up your details..."
-  sleep 2
-  name.each do |name|
-    hotel.residents(name)
-    puts hotel.residents(key)
-  end
+  if hotel.residents.has_value?(name_out)
+    "You are checking out of the #{hotel_name = hotel.name}.
+Please confirm your check out. (y)es/(n)o/(q)uit"
+    if response == 'y'
+      hotel.check_out(hotel_name, name_out)
+    elsif response == 'q'
+      menu
+    else
+      checking_out(chain)
+    end
+  else
+    "The name you entered is not currently listed with any of our hotels."
+  checking_out(chain)
+end
+
   # Check each hotel for the name(s) being checked out
   # If duplicates in different hotels, confirm which hotel using a list
   # If duplicates in same hotel... crap
