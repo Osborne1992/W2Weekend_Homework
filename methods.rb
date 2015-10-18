@@ -12,8 +12,11 @@ def checking_out(chain)
   name_out = check.split(", ")
   puts
   if hotel.residents.has_value?(name_out)
-    "You are checking out of the #{hotel_name = hotel.name}.
-Please confirm your check out. (y)es/(n)o/(q)uit"
+    puts "Please confirm (y)es/(n)o/(q)uit,"
+    puts "#{check} - checking out of - #{hotel_name = hotel.name}"
+    print "--> "
+    response = gets.chomp.downcase
+
     if response == 'y'
       hotel.check_out(hotel_name, name_out)
     elsif response == 'q'
