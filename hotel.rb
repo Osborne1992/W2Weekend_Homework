@@ -9,6 +9,9 @@ class Hotel
     @residents = {}
   end
 
+  def check_out(hotel_name, name_out)
+  end
+
   def check_in(hotel_name, name_in)
     name_in.each do |hotel_name, name|
       @residents[hotel_name] = name
