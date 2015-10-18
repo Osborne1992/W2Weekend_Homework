@@ -13,6 +13,10 @@ class Chain
   def show_revenue
   end
 
+  def residents
+    hotels.map { |name, hotel| hotel.residents(name) }
+  end
+
   def all_residents
     hotels.map { |hotel| hotel.residents }.flatten.compact
   end
